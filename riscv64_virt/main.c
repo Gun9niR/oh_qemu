@@ -76,24 +76,24 @@ LITE_OS_SEC_TEXT_INIT INT32 main(VOID)
 
     printf("\n OHOS start \n\r");
 
-    return 0;
-//     ret = LOS_KernelInit();
-//     if (ret != LOS_OK) {
-//         printf("Liteos kernel init failed! ERROR: 0x%x\n", ret);
-//         goto START_FAILED;
-//     }
+    // return 0;
+    ret = LOS_KernelInit();
+    if (ret != LOS_OK) {
+        printf("Liteos kernel init failed! ERROR: 0x%x\n", ret);
+        goto START_FAILED;
+    }
 
-//     ret = LosAppInit();
-//     if (ret != LOS_OK) {
-//         printf("LosAppInit failed! ERROR: 0x%x\n", ret);
-//     }
+    ret = LosAppInit();
+    if (ret != LOS_OK) {
+        printf("LosAppInit failed! ERROR: 0x%x\n", ret);
+    }
 
-//     LOS_Start();
+    LOS_Start();
 
-// START_FAILED:
-//     while (1) {
-//         __asm volatile("wfi");
-//     }
+START_FAILED:
+    while (1) {
+        __asm volatile("wfi");
+    }
 }
 
 #ifdef __cplusplus

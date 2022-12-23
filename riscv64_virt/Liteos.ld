@@ -2,7 +2,7 @@ OUTPUT_FORMAT("elf64-littleriscv", "elf64-littleriscv", "elf64-littleriscv")
 OUTPUT_ARCH("riscv")
 ENTRY(_start)
 
-RAM_ADDR_START            = 0x80000000;
+RAM_ADDR_START            = 0xffffffff80000000;
 RAM_ADDR_SIZE             = 128M;
 FLASH_LOAD_START          = RAM_ADDR_START;
 FLASH_LOAD_SIZE           = RAM_ADDR_SIZE;
